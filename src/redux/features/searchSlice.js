@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 let initialState={
     query:'',
-    activeTab:'photos',
+    activeTab:'Photos',
     results:[],
     isLoading:false,
     error:null,

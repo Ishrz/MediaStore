@@ -2,6 +2,7 @@ import React from 'react'
 import {FetchGif, FetchPhotos,FetchVideos} from './api/mediaApi'
 import './App.css'
 import SearchBar from './components/SearchBar'
+import Tabs from './components/Tabs'
 const App = () => {
 
   // const photoBtn=async()=>{
@@ -28,6 +29,7 @@ const App = () => {
       <button onClick={gifBtn} className='m-2 px-4 py-3 bg-red-300 rounded-2xl active:scale-95'>Fetch Gif</button> */}
 
       <SearchBar/>
+      <Tabs/>
 
     </div>
   )
