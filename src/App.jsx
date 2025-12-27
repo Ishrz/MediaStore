@@ -3,6 +3,7 @@ import {FetchGif, FetchPhotos,FetchVideos} from './api/mediaApi'
 import './App.css'
 import SearchBar from './components/SearchBar'
 import Tabs from './components/Tabs'
+import ResultGrid from './components/ResultGrid'
 const App = () => {
 
   // const photoBtn=async()=>{
@@ -30,6 +31,7 @@ const App = () => {
 
       <SearchBar/>
       <Tabs/>
+      <ResultGrid/>
 
     </div>
   )
