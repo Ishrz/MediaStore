@@ -1,5 +1,5 @@
 import React from 'react'
-import {FetchPhotos,FetchVideos} from './api/mediaApi'
+import {FetchGif, FetchPhotos,FetchVideos} from './api/mediaApi'
 import './App.css'
 const App = () => {
 
@@ -13,12 +13,19 @@ const App = () => {
     console.log(data)
   }
 
+  const gifBtn = async()=>{
+    const data=await FetchGif('cat')
+    console.log(data)
+  }
+
 
   
   return (
     <div className='bg-black h-screen w-full text-white'>
       <button onClick={photoBtn} className='m-2 px-4 py-3 bg-red-300 rounded-2xl active:scale-95'>Fetch photos</button>
       <button onClick={videoBtn} className='m-2 px-4 py-3 bg-red-300 rounded-2xl active:scale-95'>Fetch Videos</button>
+      <button onClick={gifBtn} className='m-2 px-4 py-3 bg-red-300 rounded-2xl active:scale-95'>Fetch Gif</button>
+
     </div>
   )
 }

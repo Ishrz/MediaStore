@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const UNSPLASH_KEY=import.meta.env.VITE_UNSPLASH_APIKEY
 const PEXELS_KEY = import.meta.env.VITE_PEXEL_APIKEY
-
+const TENOR_KEY = import.meta.env.VITE_TENOR_APIKEY
 export const FetchPhotos= async(query,page=1,per_page=15)=>{
     let response=await axios.get('https://api.unsplash.com/search/photos',{
         params:{query,page,per_page},
@@ -19,4 +19,11 @@ export const FetchVideos= async(query,per_page=15)=>{
     })
     // console.log(response)
     return response.data.videos;
+}
+
+export const FetchGif= async(query,limit=20)=>{
+    const response = await axios.get('https://tenor.googleapis.com/v2/search',{
+        params:{q:query,key:TENOR_KEY}
+    })
+    return response.data.results;
 }
