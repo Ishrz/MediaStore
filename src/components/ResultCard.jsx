@@ -52,12 +52,12 @@ const ResultCard = ({ elem }) => {
 
       <div
         id="bottom-title"
-        className="flex items-center justify-between px-4 text-neutral-300 absolute bottom-0 line-clamp-2  w-full h-[30%] px-2 py-2"
+        className="flex items-center justify-between px-4 text-neutral-300 absolute bottom-0 line-clamp-2  w-full h-[30%]  py-2"
       >
         <h1 className="font-bold capitalize">{elem.tittle}</h1>
         <button 
         onClick={()=>saveToCollection(elem)}
-        className="bg-blue-400 active:scale-95 hover:bg-blue-600 px-4 py-2.5 rounded-lg text-center">
+        className="bg-blue-500 active:scale-95 hover:bg-blue-600 px-4 py-2.5 rounded-lg text-center">
           save
         </button>
       </div>

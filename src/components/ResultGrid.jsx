@@ -37,7 +37,7 @@ const ResultGrid = () => {
     if(error) return <p>{error}</p>
     if(isLoading) return <h1>Loading.......</h1>
   return (
-    <div className='w-full overflow-auto bg-emerald-800 p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-around gap-4  '>
+    <div className='w-full overflow-auto bg-blue-200/50 p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-around gap-4  '>
       {results.map((elem)=>{
         return <div className="overflow-hidden rounded-2xl" key={elem.id}>
           <ResultCard elem={elem} />

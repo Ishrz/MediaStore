@@ -25,9 +25,9 @@ const SearchBar = () => {
 
 
   return (
-    <div className=" w-full h-20 flex items-center bg-emerald-500 px-4">
-      <form onSubmit={submitHandler} className="flex gap-3">
-        <input value={searchVal} onChange={changeHandler} className="border-neutral-900 border px-4 py-3 bg-neutral-600 rounded-2xl" type="text" placeholder="Search Anything"></input>
+    <div className=" w-full h-20 flex items-center bg-neutral-800 px-4">
+      <form onSubmit={submitHandler} className="flex gap-3  w-full">
+        <input value={searchVal} onChange={changeHandler} className="border-neutral-900 border px-4 py-3 bg-neutral-600 rounded-2xl w-full" type="text" placeholder="Search Anything"></input>
 
         <button className="border-neutral-900 border px-4 py-3 bg-blue-500 rounded-2xl active:scale-95">Search</button>
       </form>
