@@ -9,6 +9,7 @@ export const FetchPhotos= async(query,page=1,per_page=15)=>{
         params:{query,page,per_page},
         headers:{Authorization:`Client-ID ${UNSPLASH_KEY} `}
     })
+    // console.log(response.data.results)
   
     // normalization of api data
      return response.data.results.map((elem,index)=>({
@@ -17,6 +18,7 @@ export const FetchPhotos= async(query,page=1,per_page=15)=>{
         tittle:elem.alt_description,
         thumbnail:elem.urls.thumb,
         src:elem.urls.full,
+        url:elem.links.html,
      }));
 }
 
@@ -27,13 +29,14 @@ export const FetchVideos= async(query,per_page=15)=>{
         params:{query,per_page},
         headers:{Authorization: PEXELS_KEY}
     })
-    // console.log(response)
+    // console.log(response.data.videos)
     return response.data.videos.map((elem,index)=>({
         id:elem.id,
         type:'Video',
         tittle:elem.user.name,
         thumbnail:elem.image,
         src:elem.video_files[2].link,
+        url:elem.url,
      }));
 }
 
@@ -42,13 +45,14 @@ export const FetchGif= async(query,limit=20)=>{
     let response = await axios.get('https://tenor.googleapis.com/v2/search',{
         params:{q:query,key:TENOR_KEY}
     })
-    // console.log(response)
+    // console.log(response.data.results)
     return response=response.data.results.map((elem,index)=>({
         id:elem.id,
         type:'Gif',
         tittle:elem.content_description,
         thumbnail:elem.itemurl,
         src:elem.media_formats.gif.url,
+        url:elem.url,
      }));
 
 }
