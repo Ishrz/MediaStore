@@ -1,6 +1,17 @@
 import { FiExternalLink } from "react-icons/fi";
 
 const ResultCard = ({ elem }) => {
+
+  const saveToCollection = (elem) =>{
+    // console.log(elem)
+
+    let oldData=JSON.parse(localStorage.getItem('collection')) || [] ;
+    let newData=[...oldData,elem]
+    console.log(oldData)
+    console.log(newData)
+    localStorage.setItem('collection',JSON.stringify(newData))
+  }
+
   // console.log(elem.src)
   return (
     <div className=" h-80 relative rounded-2xl overflow-hidden group bg-gray-600 my-4 ">
@@ -44,7 +55,9 @@ const ResultCard = ({ elem }) => {
         className="flex items-center justify-between px-4 text-neutral-300 absolute bottom-0 line-clamp-2  w-full h-[30%] px-2 py-2"
       >
         <h1 className="font-bold capitalize">{elem.tittle}</h1>
-        <button className="bg-blue-400 active:scale-95 hover:bg-blue-600 px-4 py-2.5 rounded-lg text-center">
+        <button 
+        onClick={()=>saveToCollection(elem)}
+        className="bg-blue-400 active:scale-95 hover:bg-blue-600 px-4 py-2.5 rounded-lg text-center">
           save
         </button>
       </div>

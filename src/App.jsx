@@ -1,9 +1,9 @@
 import React from 'react'
 import {FetchGif, FetchPhotos,FetchVideos} from './api/mediaApi'
 import './App.css'
-import SearchBar from './components/SearchBar'
-import Tabs from './components/Tabs'
-import ResultGrid from './components/ResultGrid'
+import HomePage from './pages/HomePage'
+import CollectionPage from './pages/CollectionPage'
+import { Route, Routes } from 'react-router-dom'
 const App = () => {
 
   // const photoBtn=async()=>{
@@ -25,13 +25,12 @@ const App = () => {
   
   return (
     <div className='bg-black min-h-screen w-full text-white'>
-      {/* <button onClick={photoBtn} className='m-2 px-4 py-3 bg-red-300 rounded-2xl active:scale-95'>Fetch photos</button>
-      <button onClick={videoBtn} className='m-2 px-4 py-3 bg-red-300 rounded-2xl active:scale-95'>Fetch Videos</button>
-      <button onClick={gifBtn} className='m-2 px-4 py-3 bg-red-300 rounded-2xl active:scale-95'>Fetch Gif</button> */}
-
-      <SearchBar/>
-      <Tabs/>
-      <ResultGrid/>
+     
+     <Routes>
+        <Route path='/' element={<HomePage/>} />
+        <Route path='/collection' element={<CollectionPage/>} />
+     </Routes>
+      
 
     </div>
   )
