@@ -5,6 +5,7 @@ import ResultGrid from "../components/ResultGrid"
 const HomePage = () => {
   return (
     <div>
+        
       <SearchBar/>
       <Tabs/>
       <ResultGrid/>

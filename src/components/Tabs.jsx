@@ -13,12 +13,12 @@ const Tabs = () => {
     },[activeVal])
 
   return (
-    <div className='bg-blue-400/70 w-full px-3 py-2 flex items-center justify-center space-x-3.5'>
+    <div className='bg-blue-400/70 w-full px-7 py-2 flex items-center justify-start space-x-3.5'>
       {Tabs.map((elem,index)=> (
         <button 
          onClick={()=>dispatch(setActiveTab(elem))}
          key={index}
-         className={`${activeVal==elem? 'bg-blue-500':'bg-neutral-700'} px-3 py-2 font-medium  rounded-2xl text-lg active:scale-95 text-center text-neutral-200`}
+         className={`${activeVal==elem? 'bg-blue-500':'bg-neutral-700'} px-3 py-2 font-medium  border border-neutral-800/45   rounded-2xl text-lg active:scale-95 text-center text-neutral-200`}
          >{elem}</button>
       ))}
 

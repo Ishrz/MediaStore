@@ -4,6 +4,7 @@ import './App.css'
 import HomePage from './pages/HomePage'
 import CollectionPage from './pages/CollectionPage'
 import { Route, Routes } from 'react-router-dom'
+import Navbar from './components/Navbar.jsx'
 const App = () => {
 
   // const photoBtn=async()=>{
@@ -25,7 +26,7 @@ const App = () => {
   
   return (
     <div className='bg-black min-h-screen w-full text-white'>
-     
+     <Navbar/>
      <Routes>
         <Route path='/' element={<HomePage/>} />
         <Route path='/collection' element={<CollectionPage/>} />
