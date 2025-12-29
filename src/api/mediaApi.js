@@ -39,15 +39,16 @@ export const FetchVideos= async(query,per_page=15)=>{
 
 export const FetchGif= async(query,limit=20)=>{
     if(!query) query='nature'
-    const response = await axios.get('https://tenor.googleapis.com/v2/search',{
+    let response = await axios.get('https://tenor.googleapis.com/v2/search',{
         params:{q:query,key:TENOR_KEY}
     })
-    return response.data.results.map((elem,index)=>({
+    // console.log(response)
+    return response=response.data.results.map((elem,index)=>({
         id:elem.id,
         type:'Gif',
         tittle:elem.content_description,
         thumbnail:elem.itemurl,
-        src:elem.url,
+        src:elem.media_formats.gif.url,
      }));
 
 }
