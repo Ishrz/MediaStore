@@ -2,6 +2,7 @@ import { FiExternalLink } from "react-icons/fi";
 import { useDispatch, useSelector } from "react-redux";
 import { addCollection, removeCollection } from "../redux/features/collectionSlice";
 import { cloneElement, useEffect } from "react";
+import toast from "react-hot-toast";
 
 const CollectionCard = ({ elem }) => {
 
@@ -12,6 +13,7 @@ const CollectionCard = ({ elem }) => {
     // console.log(collectionState)
 
     dispatch(removeCollection(removeElem))
+    toast.error('Remove from collection')
         
   }
 

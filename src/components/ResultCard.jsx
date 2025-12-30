@@ -2,6 +2,7 @@ import { FiExternalLink } from "react-icons/fi";
 import { useDispatch, useSelector } from "react-redux";
 import { addCollection } from "../redux/features/collectionSlice";
 import { useEffect } from "react";
+import toast from 'react-hot-toast';
 
 const ResultCard = ({ elem }) => {
 
@@ -13,7 +14,7 @@ const ResultCard = ({ elem }) => {
 
 
     dispatch(addCollection(saveElem))
-    
+    toast.success('save in Collection')
 
 
     console.log("after storing storing")
