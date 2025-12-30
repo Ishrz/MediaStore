@@ -11,7 +11,7 @@ const collectionSlice = createSlice({
     addCollection(state, action) {
       //checks if state item have similar id of payload data find return true or false
       const alreadyExists = state.items.find(
-        (item) => iteem.id === action.payload.id
+        (item) => item.id === action.payload.id
       );
 
       // if alreadyExist false means same id nhi hai state me to false rahega aur ! ki wajeh se if me chal jayga and state me update hoga via pyload and also LS me JSON string me convert karke add

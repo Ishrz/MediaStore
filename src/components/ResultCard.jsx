@@ -1,16 +1,28 @@
 import { FiExternalLink } from "react-icons/fi";
+import { useDispatch, useSelector } from "react-redux";
+import { addCollection } from "../redux/features/collectionSlice";
+import { useEffect } from "react";
 
 const ResultCard = ({ elem }) => {
 
-  const saveToCollection = (elem) =>{
-    // console.log(elem)
+  const dispatch=useDispatch()
+  const collectionState=useSelector(state=>state.collectionRedu)
+  const saveToCollection = (saveElem) =>{
+    console.log("before storing")
+    console.log(collectionState)
 
-    let oldData=JSON.parse(localStorage.getItem('collection')) || [] ;
-    let newData=[...oldData,elem]
-    console.log(oldData)
-    console.log(newData)
-    localStorage.setItem('collection',JSON.stringify(newData))
+
+    dispatch(addCollection(saveElem))
+    
+
+
+    console.log("after storing storing")
+    
   }
+
+  // useEffect(()=>{
+  //   console.log(collectionState)
+  // },[collectionState])
 
   // console.log(elem.src)
   return (
