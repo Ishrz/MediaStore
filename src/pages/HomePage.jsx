@@ -1,6 +1,7 @@
 import SearchBar from "../components/SearchBar"
 import Tabs from "../components/Tabs"
 import ResultGrid from "../components/ResultGrid"
+import CollectionPage from "./CollectionPage"
 
 const HomePage = () => {
   return (
@@ -9,6 +10,7 @@ const HomePage = () => {
       <SearchBar/>
       <Tabs/>
       <ResultGrid/>
+      
     </div>
   )
 }
