@@ -9,6 +9,9 @@ import {
 import { useEffect } from "react";
 import ResultCard from "./ResultCard";
 import { Toaster } from "react-hot-toast";
+import { CircleLoader  } from "react-spinners";
+
+
 const ResultGrid = () => {
   const dispatch = useDispatch();
   const { activeTab, error, isLoading, query, results } = useSelector(
@@ -34,12 +37,12 @@ const ResultGrid = () => {
       }
       dispatch(setResults(response));
     };
-
+ 
     getData();
   }, [activeTab, query]);
 
-  if (error) return <p>{error}</p>;
-  if (isLoading) return <h1>Loading.......</h1>;
+  if (error) return <p>Network Error Please Try again</p>;
+  if (isLoading) return <div className="w-full h-screen  grid  items-center justify-center "><CircleLoader className=" text-center text-3xl" color={"#2B7FFF"}  size={150} /></div>;
   return (
     <div className="w-full overflow-auto bg-blue-200/50 p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-around gap-4  ">
       {results.map((elem) => {
