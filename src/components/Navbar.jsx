@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import { BsFillMenuButtonWideFill } from "react-icons/bs";
 const Navbar = () => {
   return (
     <div className="flex items-center justify-between w-full p-5 bg-neutral-800">
@@ -21,7 +21,7 @@ const Navbar = () => {
           </div>
         </Link>
       </div>
-      <div className="flex items-center justify-between gap-3  max-[450px]:hidden">
+      <div className="flex items-center justify-between gap-3  max-[546px]:hidden">
         <Link
           className="px-3 py-2.5 bg-blue-400 rounded-2xl text-xl font-medium hover:bg-blue-700 active:scale-95 transition "
           to={"/"}
@@ -34,6 +34,9 @@ const Navbar = () => {
         >
           Collection's
         </Link>
+      </div>
+      <div className="menu-icon">
+        <BsFillMenuButtonWideFill className="text-4xl text-blue-400/90"/>
       </div>
     </div>
   );
