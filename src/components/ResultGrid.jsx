@@ -39,6 +39,7 @@ const ResultGrid = () => {
     };
  
     getData();
+    
   }, [activeTab, query]);
 
   if (error) return <p>Network Error Please Try again</p>;
