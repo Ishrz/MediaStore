@@ -21,7 +21,7 @@ const Navbar = () => {
           </div>
         </Link>
       </div>
-      <div className="flex items-center justify-between gap-3">
+      <div className="flex items-center justify-between gap-3  max-[450px]:hidden">
         <Link
           className="px-3 py-2.5 bg-blue-400 rounded-2xl text-xl font-medium hover:bg-blue-700 active:scale-95 transition "
           to={"/"}
