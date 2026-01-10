@@ -37,9 +37,12 @@ const Navbar = () => {
           Collection's
         </Link>
       </div>
-      <div className="menu-icon">
-        <BsFillMenuButtonWideFill className="text-4xl text-blue-400/90"/>
+      <div className="flex md:hidden menu-icon">
+        <BsFillMenuButtonWideFill
+        onClick={()=>setIsOpen(!isOpen)}
+        className="text-4xl text-blue-400/90"/>
       </div>
+      
     </div>
   );
 };
