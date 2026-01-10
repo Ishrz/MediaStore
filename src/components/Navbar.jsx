@@ -42,7 +42,7 @@ const Navbar = () => {
         onClick={()=>setIsOpen(!isOpen)}
         className="text-4xl text-blue-400/90"/>
       </div>
-      <div className={`${isOpen ? 'block' : 'hidden'} bg-blue-400/90 w-[50%] absolute right-0 top-18  z-10 rounded-2xl transition-all p-4 duration-300 md:hidden `}>
+      <div className={` bg-blue-400/90 w-[50%] absolute right-0 top-18  z-10 rounded-2xl transition-transform duration-300 ease-in-out ${isOpen? 'translate-x-full': 'translate-x-0'} p-4  md:hidden `}>
         <ul className=" text-2xl font-bold tracking-tight">
           <Link 
           className="mb-2 bg-gray-700 p-3 text-center  rounded-xl text-blue-500 hover:bg-blue-300 active:scale-95 transition block"
