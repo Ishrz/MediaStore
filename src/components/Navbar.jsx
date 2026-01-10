@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { BsFillMenuButtonWideFill } from "react-icons/bs";
+import { useState } from "react";
 const Navbar = () => {
+  const [isOpen,setIsOpen]=useState(false)
   return (
     <div className="flex items-center justify-between w-full p-5 bg-neutral-800">
       <div className="">
@@ -21,7 +23,7 @@ const Navbar = () => {
           </div>
         </Link>
       </div>
-      <div className="flex items-center justify-between gap-3  max-[546px]:hidden">
+      <div className="hidden md:flex items-center justify-between gap-3  ">
         <Link
           className="px-3 py-2.5 bg-blue-400 rounded-2xl text-xl font-medium hover:bg-blue-700 active:scale-95 transition "
           to={"/"}
@@ -29,7 +31,7 @@ const Navbar = () => {
           Search
         </Link>
         <Link
-          className="px-3 py-2.5 bg-blue-400 rounded-2xl text-xl font-medium hover:bg-blue-700 active:scale-95 transition"
+          className=" px-3 py-2.5 bg-blue-400 rounded-2xl text-xl font-medium hover:bg-blue-700 active:scale-95 transition"
           to={"/collection"}
         >
           Collection's
