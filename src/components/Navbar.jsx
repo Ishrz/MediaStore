@@ -42,8 +42,10 @@ const Navbar = () => {
         onClick={()=>setIsOpen(!isOpen)}
         className="text-4xl text-blue-400/90"/>
       </div>
-      <div className={`${isOpen ? 'block' : 'hidden'} bg-blue-400/90 w-[50%] absolute right-14 top-9 h-70 z-10 rounded-2xl transition-all duration-300 `}>
-        <h1>Hello</h1>
+      <div className={`${isOpen ? 'block' : 'hidden'} bg-blue-400/90 w-[50%] absolute right-0 top-18 h-70 z-10 rounded-2xl transition-all duration-300  `}>
+        <ul>
+          <li></li>
+        </ul>
       </div>
     </div>
   );
