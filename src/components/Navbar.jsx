@@ -4,7 +4,7 @@ import { useState } from "react";
 const Navbar = () => {
   const [isOpen,setIsOpen]=useState(false)
   return (
-    <div className="flex items-center justify-between w-full p-5 bg-neutral-800">
+    <div className="flex items-center justify-between w-full p-5 bg-neutral-800 relative">
       <div className="">
         <Link to={"/"}>
           <div className="flex items-center  ">
@@ -42,7 +42,9 @@ const Navbar = () => {
         onClick={()=>setIsOpen(!isOpen)}
         className="text-4xl text-blue-400/90"/>
       </div>
-      
+      <div className="bg-red-400 w-[50%] absolute right-0 top-9 h-70 z-10 rounded-2xl transition-all duration-300 ">
+        <h1>Hello</h1>
+      </div>
     </div>
   );
 };
